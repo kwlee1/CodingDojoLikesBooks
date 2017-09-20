@@ -33,9 +33,30 @@ Third user like all books:
 c.liked_books.set([Books.objects.get(id=1),Books.objects.get(id=2),Books.objects.get(id=3),Books.objects.get(id=4),Books.objects.get(id=5),Books.objects.get(id=6)])
 
 Display all users who like first book:
+a = Books.objects.get(id=1)
+for x in a.liked_users.all():
+    print x.first_name
 
 Display user who uploaded first book:
+Books.objects.first().uploader.first_name
 
 Display all users who like second book: 
+for x in Books.objects.get(id=2).liked_users.all():
+    print x.first_name
 
 Display user who uplaoded second book: 
+Books.objects.get(id=2).uploader.first_name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
